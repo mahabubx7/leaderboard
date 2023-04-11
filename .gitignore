@@ -1,0 +1,12 @@
+node_modules/
+
+*-error.log
+*.log
+
+# Misc. & Others
+.vscode
+.pid
+*.pid
+.DS_Store
+.exe
+.ini
