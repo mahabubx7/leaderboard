@@ -1,0 +1,48 @@
+{
+  "name": "leaderboard",
+  "version": "1.0.0",
+  "description": "Leader-board is a web-application for the standings for a particular game.",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --open",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "test": "echo 'tdd-test!'",
+    "lint": "npm run lint:css; npm run lint:js",
+    "lint:css": "npx stylelint '**/*.{css,scss}'",
+    "lint:js": "npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mahabubx7/leaderboard.git"
+  },
+  "keywords": [
+    "webpack",
+    "javascript",
+    "api"
+  ],
+  "bug": {
+    "url": "https://github.com/mahabubx7/leaderboard/issues"
+  },
+  "author": "Mahabub Alam <mahabubx7@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.21.2",
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^6.7.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.27.5",
+    "html-webpack-plugin": "^5.5.0",
+    "sass": "^1.61.0",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.2"
+  }
+}

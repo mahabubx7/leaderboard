@@ -1,0 +1,128 @@
+$themeDark: #3e3e3e;
+$bg: #fdfdfd;
+
+// import fonts @googleFonts
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $bg;
+  color: $themeDark;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: $themeDark;
+  text-transform: capitalize;
+}
+
+button {
+  outline: 0;
+  border: 2px solid $themeDark;
+  box-shadow: 0.15rem 0.2rem 0 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease-in;
+  text-transform: capitalize;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    box-shadow: 0.2rem 0.25rem 0 0 rgba(0, 0, 0, 0.35);
+  }
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1140px;
+  margin-top: 10rem;
+}
+
+.content-area {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10rem;
+
+  // board
+  #board {
+    width: 45%;
+  }
+
+  // list
+  #list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    padding-left: 0;
+    gap: 0.15rem;
+    list-style: none;
+    width: 100%;
+    border: 2px solid $themeDark;
+
+    li {
+      display: block;
+      padding: 0.3rem 0.8rem;
+      text-transform: capitalize;
+    }
+
+    li:nth-child(2n + 1) {
+      background-color: #d3d5d6;
+    }
+  }
+
+  #form {
+    display: flex;
+    margin-right: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 300px;
+
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      outline: 0;
+      border: 2px solid $themeDark;
+    }
+  }
+
+  // h4
+  h4 {
+    font-size: 1.85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 1.75rem;
+  }
+
+  // board-top
+  .board-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 767.9px) {
+  .container {
+    width: calc(100% - 2rem);
+    margin-top: 1rem;
+  }
+
+  .content-area {
+    gap: 2rem;
+    flex-direction: column;
+
+    #board {
+      width: 100%;
+
+      #refresh { margin-top: 9px; }
+    }
+
+    #form {
+      margin-bottom: 120px;
+    }
+  }
+}
