@@ -25,9 +25,10 @@ export default class Store {
         method: 'GET',
       })
         .then(async (res) => await res.json())
-        .then((_d) => {
-          const { result } = _d;
+        .then(async (_d) => {
+          const { result } = await _d;
           localStorage.setItem('scores', JSON.stringify(result));
+          return result;
         })
         .catch((err) => console.error(err));
     } catch (err) {
@@ -45,7 +46,6 @@ export default class Store {
         },
       }).then(async (res) => await res.json())
         .then((_d) => {
-          console.log(_d);
           const { result } = _d;
           // update the list @localStorage
           const list = JSON.parse(localStorage.getItem('scores'));

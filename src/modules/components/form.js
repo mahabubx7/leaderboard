@@ -1,5 +1,6 @@
 /* eslint-disable import/extensions */
 import Store from '../storage';
+import setupList from './list';
 
 const setupForm = (parentElement) => {
   const markups = `
@@ -16,13 +17,15 @@ const setupForm = (parentElement) => {
   const name = parentElement.querySelector('input[name="name"]');
   const score = parentElement.querySelector('input[name="score"]');
   const submitBtn = parentElement.querySelector('#submit');
-  submitBtn.addEventListener('click', (e) => {
+  submitBtn.addEventListener('click', async (e) => {
     e.preventDefault();
     const item = { user: name.value, score: Number(score.value) };
-    Store.addScore(item); // create
+    await Store.addScore(item); // create
     // reset fields
     name.value = '';
     score.value = '';
+    // refresh & render
+    setupList(document.querySelector('#list'));
   });
 };
 

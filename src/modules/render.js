@@ -1,6 +1,6 @@
 import { setupForm, setupList } from './components';
 
-function renderApp(appContainer) {
+const renderApp = async (appContainer) => {
   const markups = `
     <div class="container">
       <h1>leaderboard</h1>
@@ -23,7 +23,14 @@ function renderApp(appContainer) {
 
   // setup components
   setupForm(appContainer.querySelector('#form'));
-  setupList(appContainer.querySelector('#list'));
-}
+  const listContainer = appContainer.querySelector('#list');
+  await setupList(listContainer);
+
+  // refresh button
+  appContainer.querySelector('#refresh').addEventListener('click', async () => {
+    listContainer.innerHTML = 'Loading ...';
+    await setupList(listContainer);
+  });
+};
 
 export default renderApp;
