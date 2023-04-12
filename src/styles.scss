@@ -1,5 +1,6 @@
 $themeDark: #3e3e3e;
 $bg: #fdfdfd;
+$scroll: #6e6666;
 
 // import fonts @googleFonts
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;900&display=swap');
@@ -60,6 +61,18 @@ button {
     list-style: none;
     width: 100%;
     border: 2px solid $themeDark;
+    max-height: 215px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      background-color: $bg;
+      width: 0.3rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scroll;
+      height: auto;
+    }
 
     li {
       display: block;
